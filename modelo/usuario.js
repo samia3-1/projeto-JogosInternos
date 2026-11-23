@@ -1,4 +1,4 @@
-const ConexaoBanco = require('./ConexaoBanco');
+const ConexaoBanco = require('../ConexaoBanco');
 
 async function tabelaUsuario() {
     const conexao = new ConexaoBanco();
@@ -12,6 +12,7 @@ async function tabelaUsuario() {
     `);
 
     console.log('Tabela usuarios criada!');
+    await db.close();
 }
 
 tabelaUsuario();
