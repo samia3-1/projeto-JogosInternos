@@ -12,6 +12,7 @@ async function tabelaUsuario() {
     `);
 
     console.log('Tabela usuarios criada!');
+    await db.close();
 }
 
 tabelaUsuario();
