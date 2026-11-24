@@ -5,7 +5,7 @@ class ConexaoBanco {
     async conexaoBanco() {
         const db = await open({
             filename: './database.db',
-            driver: sqlite3.Database
+            driver: sqlite3.Databas
         });
 
         return db;
