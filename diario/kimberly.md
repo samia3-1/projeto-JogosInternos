@@ -3,3 +3,6 @@ Instalei as dependências do SQLite no projeto e criei o arquivo `ConexaoBanco.j
 
 ### 23/11/2026
 Criei as tabelas Turma e Modalidade.
+
+### 24/11/2026
+Criei as tabelas Atleta, Treinador e Adm.

@@ -10,7 +10,9 @@ async function tabelaModal() {
             local TEXT NOT NULL,
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             gen TEXT NOT NULL CHECK (gen IN ('feminino', 'masculino', 'misto')),
-            tipo TEXT NOT NULL CHECK (tipo IN ('individual', 'coletivo'))
+            tipo TEXT NOT NULL CHECK (tipo IN ('individual', 'coletivo')),
+            min TEXT NOT NULL,
+            max TEXT NOT NULL
         );
     `);
 

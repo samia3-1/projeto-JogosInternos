@@ -5,13 +5,13 @@ async function tabelaUsuario() {
     const db = await conexao.conexaoBanco();
 
     await db.exec(`
-        CREATE TABLE IF NOT EXISTS usuarios (
+        CREATE TABLE IF NOT EXISTS usuario (
             cpf TEXT PRIMARY KEY,
             nome TEXT NOT NULL
         );
     `);
 
-    console.log('Tabela usuarios criada!');
+    console.log('Tabela usuario criada!');
     await db.close();
 }
 
