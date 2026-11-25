@@ -7,17 +7,15 @@ async function tabelaInscricao() {
     await db.exec(`
         CREATE TABLE IF NOT EXISTS inscricao (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            id_atleta NOT NULL,
-            id_turma NOT NULL,
-            esporte TEXT,
-            equipe TEXT,
-            nasc TEXT NOT NULL,
-            FOREIGH KEY(id_atleta) REFERENCES atleta(id),
-            FOREIGH KEY(id_turma) REFERENCES turma(id),
+            id_atleta REFERENCES atleta(id_usuario),
+            idTurma REFERENCES turma(id),
+            esporte TEXT NOT NULL,
+            id_equipe INTEGER NOT NULL REFERENCES equipe(id),
+            nasc TEXT NOT NULL
         );
     `);
 
-    console.log('Tabela INSCRIÇÃO criada!');
+    console.log('Tabela inscricao criada!');
     await db.close();
 }
 

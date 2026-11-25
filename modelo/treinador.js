@@ -6,12 +6,11 @@ async function tabelaTreinador() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS treinador (
-            id INTEGER PRIMARY KEY FOREIGH KEY,
-            FOREIGH KEY(id_usuarios) REFERENCES usuarios(id)
+            id_usuario INTEGER PRIMARY KEY REFERENCES usuarios(id)
         );
     `);
 
-    console.log('Tabela TREINADOR criada!');
+    console.log('Tabela treinador criada!');
     await db.close();
 }
 

@@ -6,13 +6,12 @@ async function tabelaAtleta() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS atleta (
-            id_usuarios PRIMARY KEY FOREIGH KEY,
-            matr TEXT NOT NULL,
-            FOREIGH KEY(id_usuarios) REFERENCES usuarios(id)
+            id_usuario INTEGER PRIMARY KEY REFERENCES usuarios(id),
+            matr TEXT NOT NULL
         );
     `);
 
-    console.log('Tabela ATLETA criada!');
+    console.log('Tabela atleta criada!');
     await db.close();
 }
 

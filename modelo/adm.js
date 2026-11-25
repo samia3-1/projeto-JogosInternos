@@ -6,12 +6,11 @@ async function tabelaAdm() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS adm (
-            id_usuarios PRIMARY KEY FOREIGH KEY,
-            FOREIGH KEY(id_usuarios) REFERENCES usuarios(id)
+            id_usuario INTEGER PRIMARY KEY REFERENCES usuarios(id)
         );
     `);
 
-    console.log('Tabela ADM criada!');
+    console.log('Tabela adm criada!');
     await db.close();
 }
 
