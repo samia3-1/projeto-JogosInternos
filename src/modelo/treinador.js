@@ -1,4 +1,4 @@
-const ConexaoBanco = require('../ConexaoBanco');
+const ConexaoBanco = require('../../ConexaoBanco');
 
 async function tabelaTreinador() {
     const conexao = new ConexaoBanco();

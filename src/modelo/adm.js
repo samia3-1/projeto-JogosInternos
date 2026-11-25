@@ -1,19 +1,18 @@
-const ConexaoBanco = require('../ConexaoBanco');
+const ConexaoBanco = require('../../ConexaoBanco');
 
-async function tabelaAtleta() {
+async function tabelaAdm() {
     const conexao = new ConexaoBanco();
     const db = await conexao.conexaoBanco();
 
     await db.exec(`
-        CREATE TABLE IF NOT EXISTS atleta (
+        CREATE TABLE IF NOT EXISTS adm (
             id_usuarios PRIMARY KEY FOREIGH KEY,
-            matr TEXT NOT NULL,
             FOREIGH KEY(id_usuarios) REFERENCES usuarios(id)
         );
     `);
 
-    console.log('Tabela ATLETA criada!');
+    console.log('Tabela ADM criada!');
     await db.close();
 }
 
-tabelaAtleta();
+tabelaAdm();
