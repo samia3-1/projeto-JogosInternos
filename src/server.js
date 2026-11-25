@@ -1,8 +1,18 @@
-const { Sequelize } = require('sequelize');
+const express = require('express');
+const sequelize = require('./config/banco');
 
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: '../database.db'
+const app = express()
+const port = 3000
+
+app.use(express.json());
+
+
+
+
+sequelize.sync().then(() => {
+  console.log(`Banco de dados conectado com sucesso!`);
+
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  });
 });
-
-module.exports = sequelize;
