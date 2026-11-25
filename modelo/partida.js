@@ -7,7 +7,7 @@ async function tabelaPartida() {
     await db.exec(`
         CREATE TABLE IF NOT EXISTS partida (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            horario NOT NULL,
+            horario TEXT NOT NULL,
             local TEXT NOT NULL,
             status TEXT,
             pontos NUMBER,

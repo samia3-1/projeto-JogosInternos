@@ -8,7 +8,8 @@ async function tabelaEquipe() {
         CREATE TABLE IF NOT EXISTS equipe (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome TEXT,
-            id_treinador
+            id_treinador INTEGER,
+            FOREIGH KEY(id_treinador) REFERENCES treinador(id),
         );
     `);
 

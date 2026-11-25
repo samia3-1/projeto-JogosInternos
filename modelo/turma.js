@@ -6,9 +6,9 @@ async function tabelaTurma() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS turma (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome TEXT NOT NULL,
             serie TEXT NOT NULL,
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
             classif TEXT
         );
     `);

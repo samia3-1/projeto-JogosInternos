@@ -6,8 +6,10 @@ async function tabelaPartida_Equipe() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS Partida_Equipe (
-            id_partida PRIMARY KEY,
-            id_equipe PRIMARY KEY,
+            id_partida PRIMARY KEY FOREIGH KEY,
+            id_equipe PRIMARY KEY FOREIGH KEY,
+            FOREIGH KEY(id_partida) REFERENCES partida(id),
+            FOREIGH KEY(id_equipe) REFERENCES equipe(id),
         );
     `);
 

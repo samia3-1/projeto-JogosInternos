@@ -11,7 +11,9 @@ async function tabelaInscricao() {
             id_turma NOT NULL,
             esporte TEXT,
             equipe TEXT,
-            nasc 
+            nasc TEXT NOT NULL,
+            FOREIGH KEY(id_atleta) REFERENCES atleta(id),
+            FOREIGH KEY(id_turma) REFERENCES turma(id),
         );
     `);
 

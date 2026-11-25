@@ -14,7 +14,7 @@ async function tabelaModal() {
         );
     `);
 
-    console.log('Tabela modalidade criada!');
+    console.log('Tabela MODALIDADE criada!');
     await db.close();
 }
 

@@ -6,7 +6,8 @@ async function tabelaUsuario() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS usuarios (
-            cpf TEXT PRIMARY KEY,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            cpf TEXT UNIQUE KEY,
             nome TEXT NOT NULL
         );
     `);
