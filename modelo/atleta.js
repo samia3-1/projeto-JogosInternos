@@ -1,4 +1,4 @@
-const ConexaoBanco = require('../ConexaoBanco');
+const ConexaoBanco = require('../../ConexaoBanco');
 
 async function tabelaAtleta() {
     const conexao = new ConexaoBanco();
@@ -6,12 +6,13 @@ async function tabelaAtleta() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS atleta (
-            id_usuario INTEGER PRIMARY KEY REFERENCES usuarios(id),
-            matr TEXT NOT NULL
+            id_usuarios PRIMARY KEY FOREIGH KEY,
+            matr TEXT NOT NULL,
+            FOREIGH KEY(id_usuarios) REFERENCES usuarios(id)
         );
     `);
 
-    console.log('Tabela atleta criada!');
+    console.log('Tabela ATLETA criada!');
     await db.close();
 }
 
