@@ -7,7 +7,6 @@ class ConexaoBanco {
             filename: './database.db',
             driver: sqlite3.Database
         });
-
         return db;
     }
 }
