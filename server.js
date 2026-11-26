@@ -1,6 +1,6 @@
 const express = require('express');
 const sequelize = require('./banco');
-
+const Usuario = require('./modelo/usuario');
 
 const app = express()
 const port = 3000
