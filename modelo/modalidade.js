@@ -1,18 +1,18 @@
 const ConexaoBanco = require('../ConexaoBanco');
 
-async function tabelaModal() {
+async function tabelaModalidade() {
     const conexao = new ConexaoBanco();
     const db = await conexao.conexaoBanco();
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS modalidade (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome TEXT NOT NULL,
             local TEXT NOT NULL,
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
             gen TEXT NOT NULL CHECK (gen IN ('feminino', 'masculino', 'misto')),
             tipo TEXT NOT NULL CHECK (tipo IN ('individual', 'coletivo')),
-            min TEXT NOT NULL,
-            max TEXT NOT NULL
+            min INTEGER NOT NULL,
+            max INTEGER NOT NULL
         );
     `);
 
@@ -20,4 +20,4 @@ async function tabelaModal() {
     await db.close();
 }
 
-tabelaModal();
+tabelaModalidade();

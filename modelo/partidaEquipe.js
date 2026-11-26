@@ -5,13 +5,16 @@ async function tabelaPartidaEquipe() {
     const db = await conexao.conexaoBanco();
 
     await db.exec(`
-        CREATE TABLE IF NOT EXISTS equipe (
-            id_partida INTEGER PRIMARY KEY REFERENCES partida(id),
-            id_equipe INTEGER PRIMARY KEY REFERENCES equipe(id)
+        CREATE TABLE IF NOT EXISTS partida_equipe (
+            id_partida INTEGER NOT NULL,
+            id_equipe INTEGER NOT NULL,
+            PRIMARY KEY (id_partida, id_equipe),
+            FOREIGN KEY (id_partida) REFERENCES partida(id),
+            FOREIGN KEY (id_equipe) REFERENCES equipe(id)
         );
     `);
 
-    console.log('Tabela partidaEquipe criada!');
+    console.log('Tabela partida_equipe criada!');
     await db.close();
 }
 

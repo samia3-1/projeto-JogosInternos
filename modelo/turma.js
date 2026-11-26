@@ -6,10 +6,9 @@ async function tabelaTurma() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS turma (
-            id_usuario INTEGER PRIMARY KEY REFERENCES usuarios(id),
-            serie TEXT NOT NULL,
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            classif TEXT
+            serie TEXT NOT NULL,
+            classif TEXT NOT NULL
         );
     `);
 

@@ -6,7 +6,8 @@ async function tabelaAdm() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS adm (
-            id_usuario INTEGER PRIMARY KEY REFERENCES usuarios(id)
+            id_usuario INTEGER PRIMARY KEY,
+            FOREIGN KEY (id_usuario) REFERENCES usuario(id)
         );
     `);
 

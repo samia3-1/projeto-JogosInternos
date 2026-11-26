@@ -7,11 +7,14 @@ async function tabelaInscricao() {
     await db.exec(`
         CREATE TABLE IF NOT EXISTS inscricao (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            id_atleta REFERENCES atleta(id_usuario),
-            idTurma REFERENCES turma(id),
+            id_atleta INTEGER NOT NULL,
+            id_turma INTEGER NOT NULL,
             esporte TEXT NOT NULL,
-            id_equipe INTEGER NOT NULL REFERENCES equipe(id),
-            nasc TEXT NOT NULL
+            id_equipe INTEGER NOT NULL,
+            nasc TEXT NOT NULL,
+            FOREIGN KEY (id_atleta) REFERENCES atleta(id_usuario),
+            FOREIGN KEY (id_turma) REFERENCES turma(id),
+            FOREIGN KEY (id_equipe) REFERENCES equipe(id)
         );
     `);
 

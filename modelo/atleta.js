@@ -6,8 +6,9 @@ async function tabelaAtleta() {
 
     await db.exec(`
         CREATE TABLE IF NOT EXISTS atleta (
-            id_usuario INTEGER PRIMARY KEY REFERENCES usuarios(id),
-            matr TEXT NOT NULL
+            id_usuario INTEGER PRIMARY KEY,
+            matr TEXT NOT NULL,
+            FOREIGN KEY (id_usuario) REFERENCES usuario(id)
         );
     `);
 

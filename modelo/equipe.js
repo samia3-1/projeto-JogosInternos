@@ -7,12 +7,13 @@ async function tabelaEquipe() {
     await db.exec(`
         CREATE TABLE IF NOT EXISTS equipe (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            id_treinador REFERENCES treinador(id_usuario),
-            nome TEXT NOT NULL
+            id_treinador INTEGER NOT NULL,
+            nome TEXT NOT NULL,
+            FOREIGN KEY (id_treinador) REFERENCES treinador(id_usuario)
         );
     `);
 
-    console.log('Tabela treinador criada!');
+    console.log('Tabela equipe criada!');
     await db.close();
 }
 
