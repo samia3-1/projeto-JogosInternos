@@ -22,9 +22,26 @@ class UsuarioDAO {
         const banco = await this.ConexaoBanco()
         await banco.run('UPDATE usuario SET nome = ? WHERE cpf = ?', cpf)
     }
+    async remover(cpf) {
+        const banco = await this.conexaoBanco()
+        await banco.run('DELETE FROM usuario WHERE cpf = ?', cpf)
+    }
+
+    async buscarPorCPF(cpf) {
+        const banco = await this.conexaoBanco()
+        const result = await banco.get('SELECT * FROM usuario WHERE cpf = ?', cpf)
+        return new Usuario(result.cpf, result.nome)
+    }
+
+    async buscarTodos() {
+        const banco = await this.conexaoBanco()
+        const result = await banco.all('SELECT * FROM usuario')
+        let lista = []
+        for (let registro of result)
+            lista.push(new Usuario(registro.cpf, registro.nome))
+        return lista
+    }
 }
 
 
-
 module.exports = UsuarioDAO
-
