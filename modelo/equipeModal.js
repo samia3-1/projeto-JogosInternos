@@ -14,7 +14,7 @@ async function tabelaEquipeModal() {
         );
     `);
 
-    console.log('Tabela equipe_modal criada!');
+    console.log('Tabela equipeModal criada!');
     await db.close();
 }
 
