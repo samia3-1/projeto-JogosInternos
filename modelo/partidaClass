@@ -1,0 +1,20 @@
+class Partida{
+    id
+    id_modal
+    horario
+    local
+    status
+    pontosA
+    pontosB
+    constructor(id, id_modal, horario, local, status, pontosA, pontosB){
+        this.id = id
+        this.id_modal = id_modal
+        this.horario = horario
+        this.local = local
+        this.status = status
+        this.pontosA = pontosA
+        this.pontosB = pontosB
+    }
+}
+
+module.exports = Partida
